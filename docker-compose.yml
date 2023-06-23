@@ -1,0 +1,34 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: db-cont
+    environment:
+      - MYSQL_ROOT_PASSWORD=bjit1234
+    restart: always
+    volumes:
+      - ./db_data:/var/lib/mysql
+    networks:
+      - tan2-network
+
+  apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web
+    ports:
+      - 9090:80
+    restart: always
+    volumes:
+      - ./crud-php-simple:/var/www/html
+    networks:
+      - tan2-network
+    depends_on:
+      - mysql
+
+networks:
+  tan2-network:
+
+volumes:
+  crud-php-simple:
+  db_data:
