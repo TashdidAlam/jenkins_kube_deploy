@@ -1,5 +1,5 @@
 <?php
-$databaseHost = 'db-cont';
+$databaseHost = 'my-mysql-service';
 $databaseName = 'test';
 $databaseUsername = 'root';
 $databasePassword = 'bjit1234';
