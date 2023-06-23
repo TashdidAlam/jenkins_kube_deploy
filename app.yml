@@ -70,7 +70,7 @@ spec:
     spec:
       containers:
       - name: webserver
-        image: tashdidalam/docker-project-1:V1
+        image: tashdidalam/jenkins-test-project2
         env:
         - name: MYSQL_HOST
           value: my-mysql-service
